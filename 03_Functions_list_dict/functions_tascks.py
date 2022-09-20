@@ -13,11 +13,7 @@ print(output)
 #_____
 # please enter card num: 4444444444444444
 # ***********4444
-
-
 #___________________________________________________________________________
-
-
 #Create a Python function that accepts a string.
 ##This function should count the number of Xs and the number of
 #Os in the string.
@@ -89,3 +85,54 @@ print(calc)
 #enter num 2 : 4
 #256.0
 #__________________________________________________
+#____________________________________________________________
+#Create a function in Python that accepts two parameters.
+#T#he first will be a list of numbers. The second parameter will be a string
+#that can be one of the following values: asc, desc, and none.
+
+#If the second parameter is "asc," then the function should return a list
+#with the numbers in ascending order. If it's "desc," then the list should be
+#in descending order, and if it's "none," it should return the original list unaltered
+def reverslis(x,y):
+    x=my_lis
+    if y == "asc":
+        x.sort()
+        return x
+    elif y == "desc":
+        x.sort(reverse=True)
+        return x
+    else:
+        return x
+my_lis=[10,35,52,22,2,8,32,92,66,0,100,87]
+lis_inp=input("enter reverse  :")
+my_order_lis=reverslis(my_lis,lis_inp)
+print(my_order_lis)
+#enter reverse  :asc
+#[0, 2, 8, 10, 22, 32, 35, 52, 66, 87, 92, 100]
+
+#enter reverse  :desc
+#[100, 92, 87, 66, 52, 35, 32, 22, 10, 8, 2, 0]
+
+#enter reverse  :
+#[10, 35, 52, 22, 2, 8, 32, 92, 66, 0, 100, 87]
+#___________________________________________________________________
+# Create a Python function that accepts a string. 
+# The function should return a string, with each character in
+#  the original string doubled. If you send the function "now" as a 
+#  parameter, it should return "nnooww," and if you send "123a!", it should return "112233aa!!".
+def repeat_chr(chr):
+    y=[]
+    repat=""
+    for x in chr:
+        # t=x*2
+        y.append(x*2)
+    return repat.join(y)
+in_chr=input("enter chracter :")
+out = repeat_chr(in_chr)
+print(out)
+# enter chracter: now
+# nnooww
+# __________________
+# nter chracter: 123a!
+# 112233aa!!
+# _________________________________________________________________
