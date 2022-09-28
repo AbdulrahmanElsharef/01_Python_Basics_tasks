@@ -1,9 +1,10 @@
-'''def loop(num1,num2):
+def loop(num1,num2):
     for x in range(num1,num2+1):
          print (x)
 num1=int(input("enter mum1 : "))
 num2=int(input("enter mum2 : "))
-loop(num1,num2) '''
+loop(num1,num2) 
+'''
 
 ''' enter mum1 : 5
 enter mum2 : 17
@@ -37,7 +38,8 @@ enter mum2 : 17
 
 
 
-'''def while_loop(n):
+'''
+def while_loop(n):
     x=1
     while x <=100 :
             if x % n == 0:
