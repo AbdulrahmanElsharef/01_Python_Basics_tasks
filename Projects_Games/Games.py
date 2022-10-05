@@ -9,6 +9,7 @@ class Game():
             -3 print_range_number game
             -4 divsion_number game
             -5 divsion_tow num game
+            -6 list commands
             ''') # welcome masseage
             game_number=int(input("enter game number:")) # user choise game number
             if game_number == 1:
@@ -29,6 +30,9 @@ class Game():
                 num_2 = int(input("enter divsion number 2 :"))
                 num_3 = int(input("enter range numbers :"))
                 self.divsion_2num(num_1, num_2, num_3) #print all number in range is divsion by tow number
+            elif game_number == 6:
+                num_1 = int(input("number of commands :"))
+                self.lis_commands(num_1)
             else:
                 print("wrong game number try again ;")
             ask_play=input("do you like play again ('y' or 'N') : ".lower())
@@ -74,3 +78,32 @@ class Game():
         for x in range(nrange+1):
                 if x % n1 == 0 and x % n2 == 0:
                     print (f"{n1,n2} is dision by {x}")
+                
+    # game (6)
+    def lis_commands(self,n):
+        commands = input("Enter list Command : ")
+        hol_lis = []
+        for x in range(n):
+                lis = list(commands.split())
+                if lis[0] == "insert":
+                    hol_lis.insert(int(lis[1]), (lis[2]))
+                    # print(hol_lis)
+                elif lis[0] == "append":
+                    hol_lis.append((lis[1]))
+                    # print(hol_lis)
+                elif lis[0] == "remove":
+                    hol_lis.remove((lis[1]))
+                    # print(hol_lis)
+                elif lis[0] == "pop":
+                    hol_lis.pop()
+                    # print(hol_lis)
+                elif lis[0] == "sort":
+                    hol_lis.sort()
+                    # print(hol_lis)
+                elif lis[0] == "reverse":
+                    hol_lis.reverse()
+                    # print(hol_lis)
+                else:
+                    print("Wrong Command")
+        else:
+            print(hol_lis)
