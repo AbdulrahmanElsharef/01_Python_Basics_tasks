@@ -101,5 +101,5 @@ class Items():
                   print(f"total Profit OF Item ({item_seiral}) =  {profit} $ ".title())
 
 
-
+car_1=Items()
 
