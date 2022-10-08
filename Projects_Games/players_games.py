@@ -1,5 +1,5 @@
 from Games import Game
-# import game class from Games module
+# # import game class from Games module
 player_1 = Game()  # creat player_1 as object of class (game)
 
 ''' this output for test games'''
@@ -153,3 +153,31 @@ player_1 = Game()  # creat player_1 as object of class (game)
 # ____________________________________________________________________
 # do you like play again('y' or 'n'): n
 # Good Bye
+# ____________________________________________________________________________
+# game(6)
+# enter your name please: abdo
+# hello abdo please choise your game:
+#     -1 odd_even_list game
+#     -2 No_double_string game
+#     -3 print_range_number game
+#     -4 divsion_number game
+#     -5 divsion_tow num game
+#     -6 list commands
+
+# enter game number: 6
+# number of commands: 5
+# Enter list Command: insert 0 3
+# ['3']
+# Enter list Command: insert 2 7
+# ['3', '7']
+# Enter list Command: append boda
+# ['3', '7', 'boda']
+# Enter list Command: sort
+# ['3', '7', 'boda']
+# Enter list Command: reverse
+# ['boda', '7', '3']
+# finish game
+# ________________________________________________________________________
+
+
+

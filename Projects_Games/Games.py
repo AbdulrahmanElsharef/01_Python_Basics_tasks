@@ -81,29 +81,31 @@ class Game():
                 
     # game (6)
     def lis_commands(self,n):
-        commands = input("Enter list Command : ")
-        hol_lis = []
-        for x in range(n):
-                lis = list(commands.split())
-                if lis[0] == "insert":
-                    hol_lis.insert(int(lis[1]), (lis[2]))
-                    # print(hol_lis)
-                elif lis[0] == "append":
-                    hol_lis.append((lis[1]))
-                    # print(hol_lis)
-                elif lis[0] == "remove":
-                    hol_lis.remove((lis[1]))
-                    # print(hol_lis)
-                elif lis[0] == "pop":
-                    hol_lis.pop()
-                    # print(hol_lis)
-                elif lis[0] == "sort":
-                    hol_lis.sort()
-                    # print(hol_lis)
-                elif lis[0] == "reverse":
-                    hol_lis.reverse()
-                    # print(hol_lis)
-                else:
-                    print("Wrong Command")
+        new_lis = []
+        for _ in range(n):
+            commands = input("Enter list Command : ")
+            lis = list(commands.split())
+            if lis[0] == "insert":
+                new_lis.insert(int(lis[1]), (lis[2]))
+                print(new_lis)
+            elif lis[0] == "append":
+                new_lis.append(lis[1])
+                print(new_lis)
+            elif lis[0] == "remove":
+                new_lis.remove(lis[1])
+                print(new_lis)
+            elif lis[0] == "pop":
+                new_lis.pop()
+                print(new_lis)
+            elif lis[0] == "sort":
+                new_lis.sort()
+                print(new_lis)
+            elif lis[0] == "reverse":
+                new_lis.reverse()
+                print(new_lis)
+            else:
+                print("Wrong Command")
         else:
-            print(hol_lis)
+            print("finish game")
+
+
