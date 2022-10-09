@@ -1,5 +1,5 @@
 # class of items for immplement in any system of company
-# Parents  class of items . Inheritance
+# Parents  class of items . 
 from random import randint as rnd
 class Items():
       def __init__(self):
@@ -101,5 +101,7 @@ class Items():
                   print(f"total Profit OF Item ({item_seiral}) =  {profit} $ ".title())
 
 
-car_1=Items()
+# Inheritance class for car items
+class Car_Items(Items):
+      pass
 

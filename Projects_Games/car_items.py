@@ -1,10 +1,10 @@
-# class of car_items for immplement in company of cars
-# Inheritance  class from items class . 
-from company_items import Items
 
-car_1=Items()
+# import Car_Items from module company_items
+# immplement object car_1 from car items class
+from company_items import Car_Items
 
 
+car_1 = Car_Items()
 # #Choise Your Items Modify
 # 1-Add Item(key-"add")
 # 2-Update Item(key-"update")
