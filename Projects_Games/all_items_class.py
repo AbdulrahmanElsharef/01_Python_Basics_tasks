@@ -166,3 +166,8 @@ class Items(): # parents class
 
 class Car_Items(Items): #inhhrant class from items class
       pass
+
+
+# class Iphone_Items(Items):
+#       pass
+
