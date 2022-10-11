@@ -1,4 +1,4 @@
-from Games import Game
+from .Modules.Games import Game
 # # import game class from Games module
 player_1 = Game()  # creat player_1 as object of class (game)
 
