@@ -1,7 +1,7 @@
 
 # import Car_Items class from module folder from company_items file
 # immplement object car_1 from car items class
-from .Modules.company_items import Car_Items
+from .company_items import Car_Items
 car_1 = Car_Items()
 
 # *** WELCOM TO ITEMS PROGRAMM ** *
