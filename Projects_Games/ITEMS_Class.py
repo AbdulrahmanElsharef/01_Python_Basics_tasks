@@ -3,41 +3,129 @@ from random import randint as rnd
 class Items(): # parents class
       def __init__(self):
             ''' creat class of items (Add & Remove & Update & &cost Sales & Profit)  '''
-            print("*** welcom to items programm ***".upper()) # welcome message
-            # creat dictionry for all items
+            print("*** welcom to programm ***".upper()) # welcome message
+            self.All_Users = {"abdo.elsharef": {"user_pass": "abdo123456789", "user_depart": "admin"}}
             self.All_items = {}
             # _____________________________________________________________
             while True:  # infinty loop
-                  item_modify = input('''Choise Your Items Modify\n1-Add Item\t\t(key - "add")\n2-Update Item\t\t(key - "update")\n3-Del Item\t\t(key - "del")\n4-ShowAll Items\t\t(key - "items")\n5-Item Details\t\t(key - "item")\n7-Item Accounting\t(key - "account")\n8-Exit\t\t\t(key - "exit")\nEnter Choise  : ''')  # optins for user input
-                  # ________________________________________________________________
-                  if item_modify.lower() == "add":
-                        self.add_item()  # fun for adding items
+                  user_login = input('''\n1-SIGHN IN\t\t(key - "1")\n2-SIGHN UP\t\t(key - "2")\n3-USER UPDATE\t\t(key - "3")\n4-EXIT\t\t\t(key - "4")\nEnter Choise  : ''')  # optins for user input
+                  if user_login == "1":
+                        print(self.All_Users.items())
+                        self.Sighn_In()
                         print("#####"*10)
-                  elif item_modify.lower() == "update":
-                        self.update_item()  # fun for update items
+                  #________________________________________________________________________
+                  elif user_login == "2":
+                        self.Sighn_Up()
                         print("#####"*10)
-                  elif item_modify.lower() == "del":
-                        self.delete_item()  # fun for del items
+                  #________________________________________________________________________
+                  elif user_login == "3":
+                        self.update_user()
                         print("#####"*10)
-                  elif item_modify.lower() == "items": # def for show all serail items
-                        self.show_All_items()
-                        print("#####"*10)
-                  elif item_modify.lower() == "item":  # def for show items details
-                        self.show_item_details()
-                        print("#####"*10)
-                  elif item_modify.lower() == "account":
-                        self.item_accounting()  # fun for accounting item
-                        print("#####"*10)
-                  elif item_modify.lower() == "exit":  # fun for exit program
+                  #________________________________________________________________________
+                  elif user_login.lower() == "4":  # fun for exit program
                         print("*****"*5)
                         print(f"exit programm".upper())
                         print("#####"*10)
                         break
+                        #________________________________________________________________________
                   else:
                         print("*****"*5)  # wrong enter modify
-                        print("**wrong item modify**".title())
+                        print("**wrong user modify**".title())
                         print("#####"*10)
+                  #________________________________________________________________________
+      #___users settings__________________________________________________________
+      def Sighn_In(self):
+            '''functions for sigh_in in all users'''
+            user_name = input("user name & email :".title())
+            user_pass = input("pass name :".title())
+            user_depart = input("user department :".title())
+            print(f"hello : ({user_name}) welcome back".title())
+            while True:
+                  if user_name.lower() in self.All_Users.keys() and user_pass.lower() == self.All_Users.get(user_name, {}).get("user_pass"):
+                        if user_depart == "stock":
+                              item_modify = input('''Choise Your Items Modify\n1-Add Item\t\t(key - "add")\n2-Update Item\t\t(key - "update")\n3-Del Item\t\t(key - "del")\n4-ShowAll Items\t\t(key - "items")\n5-Item Details\t\t(key - "item")\n7-Exit\t\t\t(key - "exit")\nEnter Choise  : ''')  # optins for user input
+                              if item_modify.lower() == "add":
+                                    self.add_item()  # fun for adding items
+                                    print("#####"*10)
+                              elif item_modify.lower() == "update":
+                                    self.update_item()  # fun for update items
+                                    print("#####"*10)
+                              elif item_modify.lower() == "del":
+                                    self.delete_item()  # fun for del items
+                                    print("#####"*10)
+                              elif item_modify.lower() == "items": # def for show all serail items
+                                    self.show_All_items()
+                                    print("#####"*10)
+                              elif item_modify.lower() == "item":  # def for show items details
+                                    self.show_item_details()
+                                    print("#####"*10)
+                              elif item_modify.lower() == "exit":  # fun for exit program
+                                    print("*****"*5)
+                                    print(f"exit programm".upper())
+                                    print("#####"*10)
+                                    break
+                              else:
+                                    print("*****"*5)  # wrong enter modify
+                                    print("**wrong item modify**".title())
+                                    print("#####"*10)
+                        #__________________________________________________________________
+                        elif user_depart == "accounting":
+                              item_modify = input('''Choise Your Items Modify\n1-ShowAll Items\t\t(key - "items")\n2-Item Details\t\t(key - "item")\n3-Accounting\t\t(key - "account")\n8-Exit\t\t\t(key - "exit")\nEnter Choise  : ''')  # optins for user input
+                              if item_modify.lower() == "items":  # def for show all serail items
+                                    self.show_All_items()
+                                    print("#####"*10)
+                              elif item_modify.lower() == "item":  # def for show items details
+                                    self.show_item_details()
+                                    print("#####"*10)
+                              elif item_modify.lower() == "account":
+                                    self.item_accounting()  # fun for accounting item
+                                    print("#####"*10)
+                              elif item_modify.lower() == "exit":  # fun for exit program
+                                    print("*****"*5)
+                                    print(f"exit programm".upper())
+                                    print("#####"*10)
+                                    break
+                              else:
+                                    print("*****"*5)  # wrong enter modify
+                                    print("**wrong item modify**".title())
+                                    print("#####"*10)
+                        else:
+                                    print("invalid department or user name".title())
+                  else: 
+                        print('"user_nam or user_pass invalid"\n"please try enter valid name or password again"'.title())
+                        print("*****"*5)
+                        break
       # ___________________________________________________________
+      def Sighn_Up(self):
+            '''functions for Sighn_Up user in all users'''
+            user_name = input("user name & email :".title())
+            user_pass = input("pass_word :".title())
+            user_depart = input("user department :".title())
+            self.All_Users[user_name.lower()] = {"user_pass": user_pass.lower(), "user_depart": user_depart.lower()}
+            print(f"hello welcome {user_name} please sighn in".title())
+            print(self.All_Users.keys())
+            print("*****"*5)
+            return self.All_Users
+      #_________________________________________________________________
+      def update_user(self):
+            '''functions for update user from  all users'''
+            print(list(self.All_Users.keys()))
+            user_name = input("user name & email :".title())
+            if user_name.lower() in self.All_Users.keys():
+                  del self.All_Users[user_name]
+                  n_user_name = input("new user name & email :".title())
+                  n_user_pass = input("new pass_word :".title())
+                  n_user_depart = input("new user department :".title())
+                  self.All_Users[n_user_name.lower()] = {"user_pass": n_user_pass.lower(), "user_depart": n_user_depart.lower()}
+                  print(f"new user is : {n_user_name} please sighn in".title())
+                  print("*****"*5)
+                  return self.All_Users
+            elif user_name.lower()  not in self.All_Users.keys():
+                  print('"user_nam or user_pass invalid"\n"please try enter valid name or password again"'.title())
+                  print("*****"*5)
+      # ___________________________________________________________
+      
+      #items settings
       def add_item(self):
             '''functions for add items in all items'''
             add_items = {}
@@ -161,13 +249,14 @@ class Items(): # parents class
                   else :
                         print('"item_seiral invalid"\n"please try enter valid serial try again"'.title())
                         print("*****"*5)
+                        break
 
 
+# item_1=Items()
+# # class Car_Items(Items): #inhhrant class from items class
+# #       pass
 
-class Car_Items(Items): #inhhrant class from items class
-      pass
 
-
-# class Iphone_Items(Items):
-#       pass
+# # class Iphone_Items(Items):
+# #       pass
 
