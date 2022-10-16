@@ -10,7 +10,7 @@ class Items(): # parents class
             while True:  # infinty loop
                   user_login = input('''\n1-SIGHN IN\t\t(key - "1")\n2-SIGHN UP\t\t(key - "2")\n3-USER UPDATE\t\t(key - "3")\n4-EXIT\t\t\t(key - "4")\nEnter Choise  : ''')  # optins for user input
                   if user_login == "1":
-                        print(self.All_Users.items())
+                        print(self.All_Users.keys())
                         self.Sighn_In()
                         print("#####"*10)
                   #________________________________________________________________________
@@ -39,11 +39,11 @@ class Items(): # parents class
             user_name = input("user name & email :".title())
             user_pass = input("pass name :".title())
             user_depart = input("user department :".title())
-            print(f"hello : ({user_name}) welcome back".title())
+            print(f"***hello : ({user_name}) welcome back***".title())
             while True:
                   if user_name.lower() in self.All_Users.keys() and user_pass.lower() == self.All_Users.get(user_name, {}).get("user_pass"):
                         if user_depart == "stock":
-                              item_modify = input('''Choise Your Items Modify\n1-Add Item\t\t(key - "add")\n2-Update Item\t\t(key - "update")\n3-Del Item\t\t(key - "del")\n4-ShowAll Items\t\t(key - "items")\n5-Item Details\t\t(key - "item")\n7-Exit\t\t\t(key - "exit")\nEnter Choise  : ''')  # optins for user input
+                              item_modify = input('''***Choise Your Items Modify***\n1-Add Item\t\t(key - "add")\n2-Update Item\t\t(key - "update")\n3-Del Item\t\t(key - "del")\n4-ShowAll Items\t\t(key - "items")\n5-Item Details\t\t(key - "item")\n7-Exit\t\t\t(key - "exit")\nEnter Choise  : ''')  # optins for user input
                               if item_modify.lower() == "add":
                                     self.add_item()  # fun for adding items
                                     print("#####"*10)
