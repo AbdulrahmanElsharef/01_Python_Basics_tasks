@@ -1,7 +1,7 @@
 # import class of items from company_items file
 import sys
 import os
-from all_items_class import Items
+from ITEMS_Class import Items
 
 class Iphone_Items(Items):
       pass
