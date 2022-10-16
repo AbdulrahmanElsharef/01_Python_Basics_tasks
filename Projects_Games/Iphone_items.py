@@ -104,4 +104,4 @@ EXIT ITEM ACCOUNTING
 ##################################################
 Enter Choise: exit
 *************************
-EXIT PROGRAMM''''''
+EXIT PROGRAMM'''
