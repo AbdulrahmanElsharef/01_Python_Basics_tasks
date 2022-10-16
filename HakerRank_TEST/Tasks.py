@@ -120,3 +120,139 @@ circy = new_Circle(4.44)
 circy.getPerimeter()#27.90857142857143
 
 # // Should return 27.897342763877365'''
+
+
+# print this desighn
+
+'''  #
+    ##
+   ###
+  ####
+ #####
+######'''
+'''def staircase(n):
+       sep=0
+       for x in range(1,n+1):
+              sep=n-x
+              print(" "*sep+"#"*x)
+       # print(" "*n+"#"*x)
+
+
+staircase(6)'''
+
+
+
+
+# Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+# Example
+
+# The minimum sum is  and the maximum sum is . The function print
+'''def miniMaxSum(arr):
+       lis=list(arr)
+       all_sum=[]
+       # sum_lis=0
+       expt=0
+       for x in lis :
+              expt=lis.pop()
+              print(lis)
+              sum_lis=sum(lis)
+              print(sum_lis)
+              all_sum.append(sum_lis)
+              lis.insert(0,expt)
+              print(lis)
+              print("________________")
+       print(all_sum)
+       print(min(all_sum),max(all_sum))
+miniMaxSum([1,3,5,7,9])'''
+# [1, 3, 5, 7]
+# 16
+# [9, 1, 3, 5, 7]
+# ________________
+# [9, 1, 3, 5]
+# 18
+# [7, 9, 1, 3, 5]
+# ________________
+# [7, 9, 1, 3]
+# 20
+# [5, 7, 9, 1, 3]
+# ________________
+# [5, 7, 9, 1]
+# 22
+# [3, 5, 7, 9, 1]
+# ________________
+# [3, 5, 7, 9]
+# 24
+# [1, 3, 5, 7, 9]
+# ________________
+# [16, 18, 20, 22, 24]
+# 16 24
+
+
+# Example
+
+
+# The maximum height candles are  units high. There are  of them, so return .
+
+# Function Description
+
+# Complete the function birthdayCakeCandles in the editor below.
+
+# birthdayCakeCandles has the following parameter(s):
+
+# int candles[n]: the candle heights
+# Returns
+
+# int: the number of candles that are tallest
+
+
+'''def birthdayCakeCandles(candles):
+       lis = list(candles)
+       count=0
+       for x in lis:
+              if lis.count(x)>0:
+                     count = x
+       return lis.count(count)
+
+
+print(birthdayCakeCandles([3,2,1,3]))'''
+
+
+def timeConversion(s):
+       lis=s.split(":")
+       hour24 = int(lis[0])
+       # if hour24>=0 :
+       lis[0] = str(hour24)
+       hour12= str(lis[-1])
+       new_hour = list(hour12)
+       new_hour[-2:]=[]
+       new = "".join(new_hour)
+       lis.remove(hour12)
+       lis.append(new)
+       new_time = ":".join(lis)
+       # elif hour24==12
+       return new_time
+
+st=input()
+print(timeConversion(st))
+# print(new_hour)
+
+
+s = "07:05:45PM"
+print(s[:8])
+AM_PM = s[-2:]
+s = s[:8]
+hh, mm, ss = [int(x) for x in s.split(":")]
+
+if AM_PM == 'PM' and hh != 12:
+       return('{:02}:{:02}:{:02}'.format(hh+12, mm, ss))
+elif AM_PM == 'AM' and hh == 12:
+       return('{:02}:{:02}:{:02}'.format(0, mm, ss))
+else:
+       return('{:02}:{:02}:{:02}'.format(hh, mm, ss))
+
+
+
+
+
+
