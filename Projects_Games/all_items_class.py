@@ -1,9 +1,11 @@
 # class of items for immplement in any system of company
 from random import randint as rnd
-class Items(): # parents class
+
+
+class Items():  # parents class
       def __init__(self):
             ''' creat class of items (Add & Remove & Update & &cost Sales & Profit)  '''
-            print("*** welcom to items programm ***".upper()) # welcome message
+            print("*** welcom to items programm ***".upper())  # welcome message
             # creat dictionry for all items
             self.All_items = {}
             # _____________________________________________________________
@@ -73,7 +75,7 @@ class Items(): # parents class
                         print("*****"*5)
             else:
                   print("update items is finshed".title())
-      #_________________________________________________________________
+      # _________________________________________________________________
       def delete_item(self):
             '''functions for deleting items from  all items'''
             print(list(self.All_items.keys()))
