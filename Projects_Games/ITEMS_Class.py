@@ -1,5 +1,3 @@
-# class of items for immplement in any system of company
-from pyclbr import Class
 from random import randint as rnd
 
 
@@ -8,7 +6,7 @@ class Items():  # parents class
 
     def __init__(self):
         self.class_name = input(
-            "please enter your items name to run program :".title())
+            "\n** please enter your items name to run program ** :".title())
         print(f"\n*** welcom to {self.class_name} programm ***".title())
         self.All_Users = {}
         self.All_items = {}
@@ -16,23 +14,23 @@ class Items():  # parents class
         while True:
             ''' infinty loop for users log in & creat user & exit'''
             user_login = input(
-                '\n1-SIGHN IN\t\t(key - "1")\n2-SIGHN UP\t\t(key - "2")\n3-USER UPDATE\t\t(key - "3")\n4-EXIT\t\t\t(key - "4")\n\nEnter Choise  : ')  # optins for user input
+                '\n1-SIGHN UP\t\t(key - "1")\n2-SIGHN IN\t\t(key - "2")\n3-USER UPDATE\t\t(key - "3")\n4-EXIT\t\t\t(key - "E")\n\nEnter Choise  : ')  # optins for user input
             if user_login == "1":
-                print(f"all users is {list(self.All_Users.keys())}")
-                self.Sighn_In()
+                self.Sighn_Up()
                 print("#####"*10)
             # ________________________________________________________________________
             elif user_login == "2":
-                self.Sighn_Up()
+                print(f"all users is {list(self.All_Users.keys())}")
+                self.Sighn_In()
                 print("#####"*10)
             # ________________________________________________________________________
             elif user_login == "3":
                 self.update_user()
                 print("#####"*10)
             # ________________________________________________________________________
-            elif user_login.lower() == "4":  # fun for exit program
+            elif user_login.lower() == "e":  # fun for exit program
                 print("*****"*5)
-                print(f"exit {self.class_name} login programm".upper())
+                print(f"exit {self.class_name} programm".upper())
                 print("#####"*10)
                 break
                 # ________________________________________________________________________
@@ -40,7 +38,7 @@ class Items():  # parents class
                 print("*****"*5)  # wrong enter modify
                 print("** please select on of choise '1','2','3','4' **".title())
                 print("#####"*10)
-            # ________________________________________________________________________
+    # ________________________________________________________________________
     # ___users settings__________________________________________________________
 
     def Sighn_In(self):
@@ -48,10 +46,11 @@ class Items():  # parents class
         user_name = input("user name or email :".title())
         user_pass = input("pass word :".title())
         user_depart = input("user department (stock or accounting) :".title())
-        print(f"***hello : --({user_name})-- welcome back***".title())
+        print(f"\n***hello : --({user_name})-- welcome back***".title())
         while True:
             if user_name.lower() in self.All_Users.keys() and user_pass.lower() == self.All_Users.get(user_name, {}).get("user_pass"):
-                if user_depart == "stock":
+                if user_depart.lower() == "stock":
+                    # print(# f"***hello : --({user_name})-- welcome back***".title())
                     item_modify = input(
                         '''***Choise Your stock Modify***\n1-Add Item\t\t(key - "A")\n2-Update Item\t\t(key - "U")\n3-Del Item\t\t(key - "D")\n4-ShowAll Items\t\t(key - "SH")\n5-Item Details\t\t(key - "ID")\n7-Exit\t\t\t(key - "E")\nEnter Choise  : ''')  # optins for user input
                     if item_modify.lower() == "a":
@@ -79,9 +78,11 @@ class Items():  # parents class
                         print("**please select 'a','u','d','sh','id','e'**".title())
                         print("#####"*10)
                 # __________________________________________________________________
-                elif user_depart == "accounting":
+                elif user_depart.lower() == "accounting":
+                    # print(
+                    #     f"***hello : --({user_name})-- welcome back***".title())
                     item_modify = input(
-                        '''Choise Your Items Modify\n1-ShowAll Items\t\t(key - "SH")\n2-Item Details\t\t(key - "ID")\n3-Accounting\t\t(key - "AC")\n8-Exit\t\t\t(key - "E")\nEnter Choise  : ''')  # optins for user input
+                        '''\nChoise Your Items Modify\n\n1-ShowAll Items\t\t(key - "SH")\n2-Item Details\t\t(key - "ID")\n3-Accounting\t\t(key - "AC")\n8-Exit\t\t\t(key - "E")\nEnter Choise  : ''')  # optins for user input
                     if item_modify.lower() == "sh":  # def for show all serail items
                         self.show_All_items()
                         print("#####"*10)
@@ -126,7 +127,8 @@ class Items():  # parents class
         if user_depart.lower() == "stock" or user_depart.lower() == 'accounting':
             self.All_Users[user_name.lower()] = {
                 "user_pass": user_pass.lower(), "user_depart": user_depart.lower()}
-            print(f"hello welcome **{user_name}** please sighn in".title())
+            print(
+                f"\n---hello **{user_name}** you have create new account---".title())
             # print(self.All_Users.keys())
             print("*****"*5)
             return self.All_Users
@@ -179,7 +181,8 @@ class Items():  # parents class
             (input(f"{self.class_name} Stosk :")))  # must be int
         add_items[item_seiral] = {"item_name": item_name.upper(
         ), "item_cost": item_cost, "item_sell": item_sell, "item_stock": item_stock}
-        print(f"{self.class_name} You Have Add Is : ({item_seiral})".title())
+        print(
+            f"****{self.class_name} You Have Add Is : ({item_seiral})****".title())
         print("*****"*5)
         self.All_items.update(add_items)
         print(f"** add_new {self.class_name} is finshed **".title())
@@ -259,7 +262,7 @@ class Items():  # parents class
         stock_item = self.All_items.get(item_seiral, {}).get("item_stock")
         while True:
             item_account = input(
-                f'''Choise Accont of {self.class_name} \n1-Stock Item\t\t(key - "S")\n2-Cost Item\t\t(key - "C")\n3-Sales Item\t\t(key - "S")\n4-Profit Item\t\t(key - "P")\n5-Exit\t\t\t(key - "E")\nEnter Choise  : ''')  # optins for user input
+                f'''***Choise  {self.class_name} accounting \n1-Stock Item\t\t(key - "S")\n2-Cost Item\t\t(key - "C")\n3-Sales Item\t\t(key - "SL")\n4-Exit\t\t\t(key - "E")***\nEnter Choise  : ''')  # optins for user input
             if item_seiral in self.All_items.keys():
                 if item_account.lower() == "s":
                     # get cuurent stock of item
@@ -284,26 +287,31 @@ class Items():  # parents class
                     print("*****"*5)
                     print(
                         f"cost of {self.class_name} is finshed".title())
-                elif item_account.lower() == "s":
+                elif item_account.lower() == "sl":
                     # get total sales of selling item and decress it from stock of item
                     item_sell_price = self.All_items.get(
                         item_seiral, {}).get("item_sell")
                     sales_item = int(input("Enter Number Of Sales Items : "))
                     stock_item -= sales_item
                     item_sales = sales_item*item_sell_price
+                    total_profit = (stock_item*item_sell_price) - \
+                        (stock_item*item_cost_price)
                     print(
                         f"total sales of {self.class_name} - ({item_seiral}) = sales {self.class_name} ({sales_item}) * sales price ({item_sell_price}) = ({item_sales} $)".title())
+                    print(
+                        f"total prfit of {self.class_name} = {item_sales} - {item_cost}  = ({total_profit} $)".title())
                     print(
                         f"current stock of {self.class_name} is ({stock_item} items)".title())
                     print("*****"*5)
                     print(
                         f"sales of all {self.class_name} is finshed".title())
-                elif item_account.lower() == "p":
-                    # get total profit of item
-                    total_profit = item_sales-item_cost
-                    print(f"profit of {self.class_name} - ({item_seiral}) = total sales ({item_sales}) - total cost ({item_cost}) = ({total_profit} $)".title())
-                    print("*****"*5)
-                    print(f"profit of {self.class_name} is finshed".title())
+                # elif item_account.lower() == "p":
+                #     # get total profit of item
+                #     total_profit = item_sales-item_cost
+                #     print(
+                #         f"profit of {self.class_name} - ({item_seiral}) = total sales ({item_sales}) - total cost ({item_cost}) = ({total_profit} $)".title())
+                #     print("*****"*5)
+                #     print(f"profit of {self.class_name} is finshed".title())
                 elif item_account.lower() == "e":  # fun for exit program
                     print("*****"*5)
                     print(f"exit {self.class_name} accounting".upper())
@@ -318,4 +326,4 @@ class Items():  # parents class
                 break
 
 
-# item_1 = Items()
+item_1 = Items()

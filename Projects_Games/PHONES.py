@@ -1,14 +1,8 @@
-# import class of items from company_items file
-
 
 from ITEMS_Class import Items
-
-
 class phone(Items):
     pass
-
-
-iphone_1 = phone()
+iphone = phone()
 
 
 '''*** WELCOM TO ITEMS PROGRAMM ** *
