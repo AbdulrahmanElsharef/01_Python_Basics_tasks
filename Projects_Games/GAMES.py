@@ -11,8 +11,7 @@ class Game():
             -5 divsion_tow num game
             -6 list commands
             ''')  # welcome masseage
-            game_number = int(input("enter game number:")
-                              )  # user choise game number
+            game_number = int(input("enter game number:"))  # user choise game number
             if game_number == 1:
                 # must input number like : 1,2,3,4,5,6,7,8,9
                 n = input("enter numbers :")
