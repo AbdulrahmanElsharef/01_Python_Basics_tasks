@@ -1,13 +1,14 @@
 # import class of items from company_items file
-import sys
-import os
+
+
 from ITEMS_Class import Items
 
-class Iphone_Items(Items):
-      pass
+
+class phone(Items):
+    pass
 
 
-iphone_1 = Iphone_Items()
+iphone_1 = phone()
 
 
 '''*** WELCOM TO ITEMS PROGRAMM ** *

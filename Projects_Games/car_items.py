@@ -118,14 +118,10 @@
 
 # immplement object car_1 from car items class
 from ITEMS_Class import Items
-
-
-class Car_Items(Items):
+class Car(Items):
     pass
 
-
-# immplement object car_1 from car items class
-car_1 = Car_Items()
+car_1 = Car()
 
 
 # *** WELCOM TO PROGRAMM ** *
