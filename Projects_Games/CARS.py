@@ -118,8 +118,11 @@
 
 # immplement object car_1 from car items class
 from ITEMS_Class import Items
+
+
 class Car(Items):
     pass
+
 
 car_1 = Car()
 
