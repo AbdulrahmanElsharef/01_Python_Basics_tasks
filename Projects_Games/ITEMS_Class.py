@@ -2,12 +2,10 @@ from random import randint as rnd
 
 
 class Items():  # parents class
-    ''' creat class of items (Add & Remove & Update & cost Sales & Profit)  '''
+    ''' creat class of items stock & accounting (Add & Remove & Update & cost Sales & Profit)  '''
 
     def __init__(self):
-        self.class_name = input(
-            "\n** please enter your items name to run program ** :".title())
-        print(f"\n*** welcom to {self.class_name} programm ***".title())
+        print(f"\n*** items stock & accounting programm is starting ***".upper())
         self.All_Users = {}
         self.All_items = {}
         # ___________________________________________________________
@@ -20,6 +18,10 @@ class Items():  # parents class
                 print("#####"*10)
             # ________________________________________________________________________
             elif user_login == "2":
+                self.class_name = input(
+                    "\n** please enter your item name to run program ** :".title())
+                print(
+                    f"\n*** welcom to {self.class_name} programm \n***".title())
                 print(f"all users is {list(self.All_Users.keys())}")
                 self.Sighn_In()
                 print("#####"*10)
@@ -52,7 +54,7 @@ class Items():  # parents class
                 if user_depart.lower() == "stock":
                     # print(# f"***hello : --({user_name})-- welcome back***".title())
                     item_modify = input(
-                        '''***Choise Your stock Modify***\n1-Add Item\t\t(key - "A")\n2-Update Item\t\t(key - "U")\n3-Del Item\t\t(key - "D")\n4-ShowAll Items\t\t(key - "SH")\n5-Item Details\t\t(key - "ID")\n7-Exit\t\t\t(key - "E")\nEnter Choise  : ''')  # optins for user input
+                        '''***\nChoise Your stock Modify***\n1-Add Item\t\t(key - "A")\n2-Update Item\t\t(key - "U")\n3-Del Item\t\t(key - "D")\n4-ShowAll Items\t\t(key - "SH")\n5-Item Details\t\t(key - "ID")\n7-Exit\t\t\t(key - "E")\nEnter Choise  : ''')  # optins for user input
                     if item_modify.lower() == "a":
                         self.add_item()  # fun for adding items
                         print("#####"*10)
