@@ -11,6 +11,7 @@ class Items():  # parents class
         # ___________________________________________________________
         while True:
             ''' infinty loop for users log in & creat user & exit'''
+            # try:
             user_login = input(
                 '\n1-SIGHN UP\t\t(key - "1")\n2-SIGHN IN\t\t(key - "2")\n3-USER UPDATE\t\t(key - "3")\n4-EXIT\t\t\t(key - "E")\n\nEnter Choise  : ')  # optins for user input
             if user_login == "1":
@@ -38,8 +39,12 @@ class Items():  # parents class
                 # ________________________________________________________________________
             else:
                 print("*****"*5)  # wrong enter modify
-                print("** please select on of choise '1','2','3','4' **".title())
+                print("** please select on of choise '1','2','3','E' **".title())
                 print("#####"*10)
+            # except:
+            #     print("*****"*5)  # wrong enter modify
+            #     print("** please select on of choise '1','2','3','4' **".title())
+            #     print("#####"*10)
     # ________________________________________________________________________
     # ___users settings__________________________________________________________
 
