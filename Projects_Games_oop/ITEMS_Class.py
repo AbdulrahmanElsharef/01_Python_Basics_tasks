@@ -1,9 +1,6 @@
 from random import randint as rnd
-
-
 class Items():  # parents class
     ''' creat class of items stock & accounting (Add & Remove & Update & cost Sales & Profit)  '''
-
     def __init__(self):
         print(f"\n*** items stock & accounting programm is starting ***".upper())
         self.All_Users = {}
